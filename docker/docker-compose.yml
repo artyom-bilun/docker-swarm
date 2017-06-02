@@ -1,0 +1,11 @@
+version: '3'
+services:
+  httpd:
+    build: ./httpd
+    ports:
+      - '80:80'
+    image: httpd
+# Why the fuck it doesn't work?
+    dns:
+      - 10.6.0.16
+      - 10.6.0.6
