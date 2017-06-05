@@ -11,9 +11,9 @@ Vagrant.configure("2") do |config|
     m.vm.network "private_network", ip: "#{manager_ip}"
     m.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
-      vb.customize [ "modifyvm", :id, "--nictype1", "virtio" ]
-      vb.customize [ 'modifyvm', :id, '--natdnshostresolver1', 'on' ]
-      vb.customize [ 'modifyvm', :id, '--natdnsproxy1', 'on' ]
+      # vb.customize [ "modifyvm", :id, "--nictype1", "virtio" ]
+      # vb.customize [ 'modifyvm', :id, '--natdnshostresolver1', 'on' ]
+      # vb.customize [ 'modifyvm', :id, '--natdnsproxy1', 'on' ]
     end
     m.vm.provision :shell, path: "provision/scripts/docker.sh"
     m.vm.provision :shell, args: ["#{manager_ip}"],
