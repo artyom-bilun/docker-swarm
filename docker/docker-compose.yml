@@ -4,4 +4,4 @@ services:
     build: ./httpd
     ports:
       - '80:80'
-    image: my_image
+    image: mnt_httpd
